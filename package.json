@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Basic nodejs project template.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,5 +14,8 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "http-status-codes": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
