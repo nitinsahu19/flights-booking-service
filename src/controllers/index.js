@@ -1,3 +1,3 @@
 module.exports = {
-  HelloController: require("../controllers/hello-controller"),
+  BookingController: require("./booking-controller"),
 };
