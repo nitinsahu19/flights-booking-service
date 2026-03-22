@@ -19,4 +19,21 @@ const createBooking = async (req, res) => {
   }
 };
 
-module.exports = { createBooking };
+const createPayment = async (req, res) => {
+  try {
+    const { bookingId, userId, amount } = req.body;
+    const bookedFlight = await BookingService.createPayment({
+      bookingId,
+      userId,
+      amount,
+    });
+    SuccessResponse.data = bookedFlight;
+    SuccessResponse.message = "Successfully completed the request";
+    return res.status(StatusCodes.OK).json(SuccessResponse);
+  } catch (error) {
+    ErrorResponse.error = error;
+    return res.status(error.statusCode).json(ErrorResponse);
+  }
+};
+
+module.exports = { createBooking, createPayment };
